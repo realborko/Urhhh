@@ -15,8 +15,9 @@
         body {
             font-family: 'Arial', sans-serif;
             color: #fff;
-            background: #000;
+            background: linear-gradient(135deg, #111, #00ffcc); /* Black to Jade Gradient */
             line-height: 1.6;
+            scroll-behavior: smooth; /* Smooth scrolling for anchor links */
         }
 
         /* Landing Page Section */
@@ -25,7 +26,6 @@
             justify-content: center;
             align-items: center;
             height: 100vh;
-            background: #111;
             text-align: center;
             flex-direction: column;
             padding: 2rem;
@@ -59,8 +59,8 @@
         /* Pricing Section */
         .pricing {
             padding: 4rem 2rem;
-            background: #000;
             text-align: center;
+            margin-top: 2rem;
         }
 
         .pricing h2 {
@@ -69,79 +69,68 @@
             color: #00ffcc;
         }
 
-        /* Horizontal Scroll Container */
+        /* Pricing Cards */
         .pricing-container {
             display: flex;
-            gap: 1.5rem;
-            overflow-x: auto;
-            padding: 1rem 0;
-            scrollbar-width: thin; /* Firefox scrollbar width */
-            scrollbar-color: #555 #000; /* Firefox scrollbar color */
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            margin-top: 2rem;
         }
 
-        /* Plan Cards */
         .plan {
-            flex: 0 0 250px; /* Fixed width for horizontal scroll */
             background: #111;
-            padding: 1.5rem;
-            border-radius: 10px;
+            padding: 2rem;
+            border-radius: 15px;
             border: 1px solid #333;
-            text-align: left;
-            transition: transform 0.3s ease;
+            text-align: center;
+            max-width: 300px;
+            width: 100%;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
         }
 
         .plan:hover {
             transform: scale(1.05);
-            border-color: #00ffcc;
+            box-shadow: 0 8px 16px rgba(0, 255, 204, 0.7);
         }
 
         .plan h3 {
-            font-size: 1.5rem;
+            font-size: 2rem;
             color: #00ffcc;
+            margin-bottom: 1rem;
         }
 
         .plan p {
-            font-size: 1.2rem;
+            font-size: 1.5rem;
             margin-bottom: 1rem;
+            color: #fff;
         }
 
         .plan ul {
             list-style: none;
-            margin-bottom: 1.5rem;
+            margin-bottom: 2rem;
         }
 
         .plan ul li {
-            margin-bottom: 0.5rem;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+            color: #bbb;
         }
 
         .btn {
             display: inline-block;
-            padding: 0.6rem 1.5rem;
+            padding: 0.8rem 2rem;
             background: #00ffcc;
             color: #000;
-            border-radius: 20px;
+            border-radius: 50px;
             text-decoration: none;
             font-weight: bold;
+            transition: background-color 0.3s ease;
         }
 
-        /* Highlighted Plan */
-        .plan.highlight {
-            background: #222;
-            border-color: #00ffcc;
-        }
-
-        /* Scrollbar Styles */
-        .pricing-container::-webkit-scrollbar {
-            height: 8px;
-        }
-
-        .pricing-container::-webkit-scrollbar-thumb {
-            background: #555;
-            border-radius: 10px;
-        }
-
-        .pricing-container::-webkit-scrollbar-track {
-            background: #000;
+        .btn:hover {
+            background-color: #00cc99;
         }
 
         /* Media Queries for Responsiveness */
@@ -156,11 +145,6 @@
 
             .pricing h2 {
                 font-size: 2rem;
-            }
-
-            .pricing-container {
-                flex-wrap: wrap;
-                justify-content: center;
             }
 
             .plan {
@@ -204,8 +188,8 @@
         <h2>Pricing Plans</h2>
         <div class="pricing-container">
             <div class="plan">
-                <h3>Starter</h3>
-                <p>$10/month</p>
+                <h3>1 Week</h3>
+                <p>$2</p>
                 <ul>
                     <li>1 TB Storage</li>
                     <li>Basic Security</li>
@@ -213,9 +197,19 @@
                 </ul>
                 <a href="#" class="btn">Get Started</a>
             </div>
-            <div class="plan highlight">
-                <h3>Pro</h3>
-                <p>$25/month</p>
+            <div class="plan">
+                <h3>1 Month</h3>
+                <p>$5</p>
+                <ul>
+                    <li>1 TB Storage</li>
+                    <li>Basic Security</li>
+                    <li>Email Support</li>
+                </ul>
+                <a href="#" class="btn">Get Started</a>
+            </div>
+            <div class="plan">
+                <h3>5 Months</h3>
+                <p>$15</p>
                 <ul>
                     <li>5 TB Storage</li>
                     <li>Advanced Security</li>
@@ -224,14 +218,14 @@
                 <a href="#" class="btn">Get Started</a>
             </div>
             <div class="plan">
-                <h3>Enterprise</h3>
-                <p>Custom Pricing</p>
+                <h3>Lifetime</h3>
+                <p>$30</p>
                 <ul>
                     <li>Unlimited Storage</li>
                     <li>Premium Security</li>
                     <li>24/7 Support</li>
                 </ul>
-                <a href="#" class="btn">Contact Us</a>
+                <a href="#" class="btn">Get Started</a>
             </div>
         </div>
     </section>
