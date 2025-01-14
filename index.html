@@ -1,7 +1,64 @@
-<section class="pricing" id="pricing">
-    <h2>Pricing Plans</h2>
-    <div class="pricing-container">
-        <div class="plans-wrapper">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jade Cloud</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            color: #fff;
+            background: #000;
+            line-height: 1.6;
+        }
+        .pricing {
+            padding: 4rem 2rem;
+            background: #000;
+            text-align: center;
+        }
+        .pricing h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            color: #00ffcc;
+        }
+        .pricing-container {
+            display: flex;
+            gap: 1.5rem;
+            overflow-x: auto;
+            padding: 1rem 0;
+        }
+        .plan {
+            flex: 0 0 250px;
+            background: #111;
+            padding: 1.5rem;
+            border-radius: 10px;
+            border: 1px solid #333;
+            text-align: left;
+            transition: transform 0.3s ease;
+        }
+        .plan:hover {
+            transform: scale(1.05);
+            border-color: #00ffcc;
+        }
+        .plan h3 {
+            font-size: 1.5rem;
+            color: #00ffcc;
+        }
+        .btn {
+            display: inline-block;
+            padding: 0.6rem 1.5rem;
+            background: #00ffcc;
+            color: #000;
+            border-radius: 20px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <section class="pricing" id="pricing">
+        <h2>Pricing Plans</h2>
+        <div class="pricing-container">
             <div class="plan">
                 <h3>Starter</h3>
                 <p>$10/month</p>
@@ -10,7 +67,7 @@
                     <li>Basic Security</li>
                     <li>Email Support</li>
                 </ul>
-                <a href="#" class="btn primary-btn">Get Started</a>
+                <a href="#" class="btn">Get Started</a>
             </div>
             <div class="plan highlight">
                 <h3>Pro</h3>
@@ -20,7 +77,7 @@
                     <li>Advanced Security</li>
                     <li>Priority Support</li>
                 </ul>
-                <a href="#" class="btn primary-btn">Get Started</a>
+                <a href="#" class="btn">Get Started</a>
             </div>
             <div class="plan">
                 <h3>Enterprise</h3>
@@ -30,8 +87,9 @@
                     <li>Premium Security</li>
                     <li>24/7 Support</li>
                 </ul>
-                <a href="#" class="btn primary-btn">Contact Us</a>
+                <a href="#" class="btn">Contact Us</a>
             </div>
         </div>
-    </div>
-</section>
+    </section>
+</body>
+</html>
