@@ -1,44 +1,93 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Arial', sans-serif;
+    color: #fff;
+    background: #000;
+    line-height: 1.6;
+}
+
 /* Pricing Section */
 .pricing {
     padding: 4rem 2rem;
     background: #000;
     text-align: center;
 }
+.pricing h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    color: #00ffcc;
+}
+
+/* Horizontal Scroll Container */
 .pricing-container {
+    display: flex;
+    gap: 1.5rem;
     overflow-x: auto; /* Enable horizontal scrolling */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 1rem;
-}
-.plans-wrapper {
-    display: flex;
-    gap: 2rem;
-    min-width: max-content; /* Prevents shrinking */
     padding: 1rem 0;
+    scrollbar-width: thin; /* Firefox scrollbar width */
+    scrollbar-color: #555 #000; /* Firefox scrollbar color */
 }
+
+/* Plan Cards */
 .plan {
-    flex: 0 0 250px; /* Fixed width for each plan */
-    padding: 2rem;
-    border: 1px solid #333;
-    border-radius: 10px;
-    transition: transform 0.3s ease;
+    flex: 0 0 250px; /* Fixed width for horizontal scroll */
     background: #111;
+    padding: 1.5rem;
+    border-radius: 10px;
+    border: 1px solid #333;
     text-align: left;
-}
-.plan.highlight {
-    border-color: #00ffcc;
-    background: #222;
+    transition: transform 0.3s ease;
 }
 .plan:hover {
     transform: scale(1.05);
+    border-color: #00ffcc;
+}
+.plan h3 {
+    font-size: 1.5rem;
+    color: #00ffcc;
+    margin-bottom: 0.5rem;
+}
+.plan p {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+.plan ul {
+    list-style: none;
+    margin-bottom: 1.5rem;
+}
+.plan ul li {
+    margin-bottom: 0.5rem;
+}
+.plan .btn {
+    display: inline-block;
+    padding: 0.6rem 1.5rem;
+    border-radius: 20px;
+    text-decoration: none;
+    background: #00ffcc;
+    color: #000;
+    font-weight: bold;
+    text-align: center;
 }
 
-/* Remove Scrollbar Styling (Optional) */
+/* Highlighted Plan */
+.plan.highlight {
+    background: #222;
+    border-color: #00ffcc;
+}
+
+/* Scrollbar Styles */
 .pricing-container::-webkit-scrollbar {
     height: 8px;
 }
 .pricing-container::-webkit-scrollbar-thumb {
     background: #555;
     border-radius: 10px;
+}
+.pricing-container::-webkit-scrollbar-track {
+    background: #000;
 }
