@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jade Cloud</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet"> <!-- Font Awesome Icons -->
     <style>
         /* General Reset */
         * {
@@ -20,22 +21,22 @@
             background-color: #111; /* Dark background for top bar */
             padding: 1rem;
             display: flex;
-            justify-content: space-around;
+            justify-content: center; /* Center the icons */
             align-items: center;
             z-index: 1000;
         }
 
         .top-bar a {
             color: #fff;
-            text-decoration: none;
-            font-size: 1rem;
-            padding: 0.5rem 1rem;
-            border-radius: 5px;
-            transition: background-color 0.3s ease;
+            font-size: 1.5rem; /* Larger icons */
+            margin: 0 1rem;
+            transition: background-color 0.3s ease, transform 0.3s ease;
         }
 
-        .top-bar a:hover {
+        .top-bar a:hover,
+        .top-bar a:active {
             background-color: #00cc99; /* Light jade color */
+            transform: scale(1.1); /* Slightly enlarge the icon on hover */
         }
 
         body {
@@ -131,10 +132,10 @@
             width: 100%;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
-            padding: 2rem; /* Padding added inside cards for better spacing */
         }
 
-        .plan:hover {
+        .plan:hover,
+        .plan:active {
             transform: scale(1.05);
             box-shadow: 0 8px 16px rgba(0, 255, 204, 0.7);
             background-color: #333; /* Slight color change on hover */
@@ -221,11 +222,11 @@
     </style>
 </head>
 <body>
-    <!-- Top Bar -->
+    <!-- Top Bar with Icons -->
     <div class="top-bar">
-        <a href="#contact">Contact</a>
-        <a href="https://discord.com" target="_blank">Discord</a>
-        <a href="https://fakecrime.bio" target="_blank">Fakecrime.bio</a>
+        <a href="#contact"><i class="fas fa-envelope"></i></a>
+        <a href="https://discord.com" target="_blank"><i class="fab fa-discord"></i></a>
+        <a href="https://fakecrime.bio" target="_blank"><i class="fas fa-link"></i></a>
     </div>
 
     <!-- Landing Page Section -->
