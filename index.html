@@ -5,30 +5,83 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jade Cloud</title>
     <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Arial', sans-serif;
             color: #fff;
             background: #000;
             line-height: 1.6;
         }
+
+        /* Landing Page Section */
+        .landing {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: #111;
+            text-align: center;
+            flex-direction: column;
+            padding: 2rem;
+        }
+
+        .landing h1 {
+            font-size: 3rem;
+            color: #00ffcc;
+            margin-bottom: 1rem;
+        }
+
+        .landing p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+
+        .btn-primary {
+            background-color: #00ffcc;
+            color: #000;
+            padding: 0.8rem 2rem;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            background-color: #00cc99;
+        }
+
+        /* Pricing Section */
         .pricing {
             padding: 4rem 2rem;
             background: #000;
             text-align: center;
         }
+
         .pricing h2 {
             font-size: 2.5rem;
             margin-bottom: 2rem;
             color: #00ffcc;
         }
+
+        /* Horizontal Scroll Container */
         .pricing-container {
             display: flex;
             gap: 1.5rem;
             overflow-x: auto;
             padding: 1rem 0;
+            scrollbar-width: thin; /* Firefox scrollbar width */
+            scrollbar-color: #555 #000; /* Firefox scrollbar color */
         }
+
+        /* Plan Cards */
         .plan {
-            flex: 0 0 250px;
+            flex: 0 0 250px; /* Fixed width for horizontal scroll */
             background: #111;
             padding: 1.5rem;
             border-radius: 10px;
@@ -36,14 +89,31 @@
             text-align: left;
             transition: transform 0.3s ease;
         }
+
         .plan:hover {
             transform: scale(1.05);
             border-color: #00ffcc;
         }
+
         .plan h3 {
             font-size: 1.5rem;
             color: #00ffcc;
         }
+
+        .plan p {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
+
+        .plan ul {
+            list-style: none;
+            margin-bottom: 1.5rem;
+        }
+
+        .plan ul li {
+            margin-bottom: 0.5rem;
+        }
+
         .btn {
             display: inline-block;
             padding: 0.6rem 1.5rem;
@@ -53,9 +123,83 @@
             text-decoration: none;
             font-weight: bold;
         }
+
+        /* Highlighted Plan */
+        .plan.highlight {
+            background: #222;
+            border-color: #00ffcc;
+        }
+
+        /* Scrollbar Styles */
+        .pricing-container::-webkit-scrollbar {
+            height: 8px;
+        }
+
+        .pricing-container::-webkit-scrollbar-thumb {
+            background: #555;
+            border-radius: 10px;
+        }
+
+        .pricing-container::-webkit-scrollbar-track {
+            background: #000;
+        }
+
+        /* Media Queries for Responsiveness */
+        @media (max-width: 768px) {
+            .landing h1 {
+                font-size: 2.5rem;
+            }
+
+            .landing p {
+                font-size: 1rem;
+            }
+
+            .pricing h2 {
+                font-size: 2rem;
+            }
+
+            .pricing-container {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .plan {
+                flex: 0 0 80%;
+                max-width: 350px;
+                margin: 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .landing h1 {
+                font-size: 2rem;
+            }
+
+            .landing p {
+                font-size: 1rem;
+            }
+
+            .pricing h2 {
+                font-size: 1.8rem;
+            }
+
+            .plan {
+                flex: 0 0 90%;
+                max-width: 300px;
+                margin: 1rem;
+            }
+        }
     </style>
 </head>
 <body>
+    <!-- Landing Page Section -->
+    <section class="landing">
+        <h1>Welcome to Jade Cloud</h1>
+        <p>Discover fresh combos and affordable private cloud solutions for all your needs.</p>
+        <a href="#pricing" class="btn-primary">View Pricing</a>
+    </section>
+
+    <!-- Pricing Plans Section -->
     <section class="pricing" id="pricing">
         <h2>Pricing Plans</h2>
         <div class="pricing-container">
